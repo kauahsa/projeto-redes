@@ -39,6 +39,7 @@ header {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--accent);
+    transition: transform 0.5s, filter 0.5s;
     
 }
 .logo:hover {
@@ -48,6 +49,7 @@ header {
     transition: transform 0.5s, filter 0.5s;
     filter: drop-shadow(2px 2px 5px rgba(4, 209, 130, 0.7));
 }
+
 
 nav ul {
     display: flex;
@@ -601,7 +603,7 @@ section {
 }
 
 .contact-method {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
 }
