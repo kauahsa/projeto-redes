@@ -118,9 +118,34 @@ width: 100%;
 height: 100%;
 z-index: 0;
 }
+::-webkit-scrollbar {
+    width: 12px; /* Increased width for better visibility */
+}
 
+::-webkit-scrollbar-track {
+    background: var(--background); /* Background of the scrollbar track */
+   
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    width: 7px; /* Color of the scrollbar thumb */
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent); /* Color when hovering over scrollbar */
+    width: 15px; /* Slightly wider on hover */
+}
+
+/* Add a subtle glow effect when scrollbar is active */
+::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    box-shadow: 0 0 10px rgba(74, 222, 128, 0.5);
+    transform: scale(1.1);
+}
 .hero-content {
-max-width: 1200px;
+max-width: 1350px;
 margin: 0 auto;
 display: flex;
 align-items: center;
@@ -429,6 +454,99 @@ section {
     background-color: var(--accent);
     bottom: -10px;
     left: 25%;
+}
+#specialties {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.specialties-container {
+    margin-top: 2rem;
+}
+
+.specialty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.specialty-card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.specialty-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.specialty-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    transition: height 0.5s;
+    z-index: 1;
+}
+
+.specialty-card:hover::before {
+    height: 10px;
+}
+
+.specialty-icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    color: var(--accent);
+    transition: transform 0.5s, color 0.5s;
+}
+
+.specialty-card:hover .specialty-icon {
+    transform: scale(1.2);
+    color: var(--primary);
+}
+
+.specialty-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.specialty-description {
+    flex-grow: 1;
+    color: var(--secondary);
+    margin-bottom: 1.5rem;
+}
+
+.specialty-skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.specialty-skills .skill-tag {
+    background-color: rgba(74, 222, 128, 0.1);
+    color: var(--accent);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    transition: all 0.3s;
+}
+
+.specialty-card:hover .skill-tag {
+    background-color: rgba(74, 222, 128, 0.2);
+    transform: translateY(-2px);
 }
 
 .about {
@@ -902,6 +1020,7 @@ footer {
             <ul>
                 <li><a class="active" href="#home">Início</a></li>
                 <li><a class="active" href="#about">Sobre</a></li>
+                <li><a class="active" href="#specialties">Especialidades</a></li>
                 <li><a class="active" href="#languages">Linguagens</a></li>
                 <li><a class="active" href="#projects">Projetos</a></li>
                 <li><a class="active" href="#contact">Contato</a></li>
@@ -915,18 +1034,18 @@ footer {
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Kauã Andrade</h1>
-                    <h2>Desenvolvedor FullStack | Estudante na UNICAMP</h2>
+                    <h2>Desenvolvedor FullStack | Estudante da UNICAMP de Limeira-SP</h2>
                     <div class="paragraph-with-bar">
-                        <p>Transformando ideias em experiências digitais incríveis</p>
+                        <p>Olá, meu nome é Kauã, tenho 18 anos e sou um desenvolvedor apaixonado por tecnologia e inovação. Desde 2024, estou mergulhando no universo do desenvolvimento de software, com um foco especial em criar soluções web que atendem às necessidades e desejos dos usuários. Ao longo dessa jornada, tenho buscado constantemente aprimorar minhas habilidades e expandir meu conhecimento, com o objetivo de entregar experiências cada vez mais eficientes e impactantes. Acredito que a programação é uma ferramenta poderosa para transformar ideias em realidade, e estou sempre em busca de novos desafios para evoluir como profissional.</p>
                     </div>
                     
                     <div class="stats-cards">
                         <div class="stat-card">
-                            <div class="stat-number">5+</div>
+                            <div class="stat-number">1+</div>
                             <div class="stat-text">Anos de experiência</div>
                         </div>
                         <div class="stat-card">
-                            <div class="stat-number">25+</div>
+                            <div class="stat-number">5+</div>
                             <div class="stat-text">Projetos concluídos</div>
                         </div>
                     </div>
@@ -945,8 +1064,7 @@ footer {
                             <i class="far fa-envelope"></i>
                         </a>
                     </div>
-                    
-                    <a href="#contact" class="btn">Entre em contato</a>
+                   
                 </div>
                 <div class="hero-img">
                     <img src="imagens/banner.png" alt="Imagem do desenvolvedor">
@@ -961,9 +1079,9 @@ footer {
                     <img src="/api/placeholder/600/600" alt="Foto do desenvolvedor">
                 </div>
                 <div class="about-text">
-                    <h2>Olá, eu sou o K</h2>
-                    <p>Desenvolvedor Full Stack apaixonado por criar soluções digitais elegantes e eficientes. Com mais de 5 anos de experiência no desenvolvimento de aplicações web e mobile, sempre busco aprender novas tecnologias e me manter atualizado com as tendências do mercado.</p>
-                    <p>Minha jornada na programação começou na universidade e desde então tenho trabalhado em diversos projetos para empresas de diferentes segmentos. Minha abordagem combina criatividade, boas práticas de desenvolvimento e foco na experiência do usuário.</p>
+                    <h2>Olá, eu sou o Kauã</h2>
+                    <p>Desenvolvedor Full Stack apaixonado por criar sites elegantes e eficientes.Com uma carreira iniciada em 2024 com pouca experiencia, porem com muita vontade de evoluir e aprender sobre desenvolvimento de aplicações web e mobile, sempre busco aprender novas tecnologias e me manter atualizado com as tendências do mercado.</p>
+                    <p>Minha jornada na programação começou na universidade e desde então tenho trabalhado em diversos projetos proprios e para clientes de diferentes segmentos. Minha abordagem combina criatividade, boas práticas de desenvolvimento e foco na experiência do usuário.</p>
                     <div class="skills">
                     <p><strong>Habilidades:</strong><br><br>
                         <strong>Linguagens:</strong>
@@ -977,6 +1095,51 @@ footer {
                         <span class="skill-tag">CSS</span></p>
                     
 
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="specialties">
+            <h2 class="section-title">Especialidades</h2>
+            <div class="specialties-container">
+                <div class="specialty-grid">
+                    <div class="specialty-card">
+                        <div class="specialty-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3 class="specialty-title">Desenvolvimento Web</h3>
+                        <p class="specialty-description">Criação de interfaces responsivas e intuitivas utilizando tecnologias modernas como HTML5, CSS3 e JavaScript. Foco em design clean e experiência do usuário.</p>
+                        <div class="specialty-skills">
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <div class="specialty-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="specialty-title">Backend</h3>
+                        <p class="specialty-description">Desenvolvimento de APIs robustas e eficientes, modelagem de banco de dados e implementação de lógicas de negócio complexas com foco em performance.</p>
+                        <div class="specialty-skills">
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">MySQL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="specialty-card">
+                        <div class="specialty-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="specialty-title">Soft Skills</h3>
+                        <p class="specialty-description">Comunicação efetiva, trabalho em equipe, resolução de problemas e aprendizado contínuo. Capacidade de adaptação e foco em resultados.</p>
+                        <div class="specialty-skills">
+                            <span class="skill-tag">Comunicação</span>
+                            <span class="skill-tag">Colaboração</span>
+                            <span class="skill-tag">Proatividade</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1034,14 +1197,14 @@ footer {
                             <img src="/api/placeholder/600/400" alt="Projeto 1">
                         </div>
                         <div class="project-info">
-                            <h3>App de Finanças Pessoais</h3>
-                            <p>Aplicativo para controle financeiro pessoal com dashboard intuitivo e relatórios detalhados.</p>
+                            <h3>Site Minha redes</h3>
+                            <p>Atividade realizada para o Curso em Vido (curso online)</p>
                             <div class="project-tags">
                                 <span class="project-tag">React Native</span>
                                 <span class="project-tag">Firebase</span>
                                 <span class="project-tag">Redux</span>
                             </div>
-                            <a href="#" class="btn">Ver projeto</a>
+                            <a href="https://kauaandrade-unicamp.github.io/projeto-social/" class="btn">Ver projeto</a>
                         </div>
                     </div>
                     
@@ -1050,14 +1213,14 @@ footer {
                             <img src="/api/placeholder/600/400" alt="Projeto 2">
                         </div>
                         <div class="project-info">
-                            <h3>E-commerce de Produtos Naturais</h3>
-                            <p>Plataforma completa de e-commerce com sistema de pagamentos, gestão de estoque e painel administrativo.</p>
+                            <h3>Site Para ONG oamorpodetanto</h3>
+                            <p>Aplicação web para contato de informações do estabelicimento e informações sobre a ONG</p>
                             <div class="project-tags">
-                                <span class="project-tag">Next.js</span>
-                                <span class="project-tag">Stripe</span>
-                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">JavaScript</span>
+                                <span class="project-tag">HTML</span>
+                                <span class="project-tag">CSS</span>
                             </div>
-                            <a href="#" class="btn">Ver projeto</a>
+                            <a href="https://oamorpodetanto.netlify.app/" class="btn">Ver projeto</a>
                         </div>
                     </div>
                     
@@ -1075,7 +1238,7 @@ footer {
                                 <span class="project-tag">HTML</span>
                                 <span class="project-tag">CSS</span>
                             </div>
-                            <a href="#" class="btn">Ver projeto</a>
+                            <a href="https://recantoandrade.netlify.app/" class="btn">Ver projeto</a>
                         </div>
                     </div>
                 </div>
