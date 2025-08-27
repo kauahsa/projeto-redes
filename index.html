@@ -173,162 +173,167 @@
             position: relative;
             z-index: 1;
         }
+
         /* Seção de Stack de Tecnologias */
-.tech-stack {
-    max-width: 1400px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 2rem 0;
-}
+        .tech-stack {
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
 
-.tech-slider {
-    display: flex;
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    margin-bottom: 2rem;
-}
+        .tech-slider {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 2rem;
+        }
 
-.tech-slider.reverse {
-    margin-bottom: 0;
-}
+        .tech-slider.reverse {
+            margin-bottom: 0;
+        }
 
-.tech-track {
-    display: flex;
-    animation: slideLeft 30s linear infinite;
-    gap: 2rem;
-    padding: 1rem 0;
-}
+        .tech-track {
+            display: flex;
+            animation: slideLeft 30s linear infinite;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
 
-.tech-track-reverse {
-    display: flex;
-    animation: slideRight 25s linear infinite;
-    gap: 2rem;
-    padding: 1rem 0;
-}
+        .tech-track-reverse {
+            display: flex;
+            animation: slideRight 25s linear infinite;
+            gap: 2rem;
+            padding: 1rem 0;
+        }
 
-@keyframes slideLeft {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%);
-    }
-}
+        @keyframes slideLeft {
+            0% {
+                transform: translateX(0);
+            }
 
-@keyframes slideRight {
-    0% {
-        transform: translateX(-50%);
-    }
-    100% {
-        transform: translateX(0);
-    }
-}
+            100% {
+                transform: translateX(-50%);
+            }
+        }
 
-.tech-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 120px;
-    height: 120px;
-    background-color: var(--card-bg);
-    border-radius: 1rem;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-    border: 2px solid transparent;
-}
+        @keyframes slideRight {
+            0% {
+                transform: translateX(-50%);
+            }
 
-.tech-item:hover {
-    transform: translateY(-10px) scale(1.1);
-    box-shadow: 0 15px 30px rgba(74, 222, 128, 0.3);
-    border-color: var(--accent);
-    background-color: rgba(74, 222, 128, 0.1);
-}
+            100% {
+                transform: translateX(0);
+            }
+        }
 
-.tech-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, var(--primary), var(--accent));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
-}
+        .tech-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-width: 120px;
+            height: 120px;
+            background-color: var(--card-bg);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
 
-.tech-item:hover::before {
-    transform: scaleX(1);
-}
+        .tech-item:hover {
+            transform: translateY(-10px) scale(1.1);
+            box-shadow: 0 15px 30px rgba(74, 222, 128, 0.3);
+            border-color: var(--accent);
+            background-color: rgba(74, 222, 128, 0.1);
+        }
 
-.tech-item img {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 0.5rem;
-    transition: transform 0.3s ease;
-}
+        .tech-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
 
-.tech-item:hover img {
-    transform: scale(1.2) rotate(5deg);
-}
+        .tech-item:hover::before {
+            transform: scaleX(1);
+        }
 
-.tech-item span {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--text);
-    text-align: center;
-    transition: color 0.3s ease;
-}
+        .tech-item img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
 
-.tech-item:hover span {
-    color: var(--accent);
-}
+        .tech-item:hover img {
+            transform: scale(1.2) rotate(5deg);
+        }
 
-.postman-icon, .insomnia-icon {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-    transition: transform 0.3s ease;
-}
+        .tech-item span {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text);
+            text-align: center;
+            transition: color 0.3s ease;
+        }
 
-.tech-item:hover .postman-icon,
-.tech-item:hover .insomnia-icon {
-    transform: scale(1.2) rotate(5deg);
-}
+        .tech-item:hover span {
+            color: var(--accent);
+        }
 
-/* Pause animation on hover */
-.tech-slider:hover .tech-track {
-    animation-play-state: paused;
-}
+        .postman-icon,
+        .insomnia-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            transition: transform 0.3s ease;
+        }
 
-.tech-slider:hover .tech-track-reverse {
-    animation-play-state: paused;
-}
+        .tech-item:hover .postman-icon,
+        .tech-item:hover .insomnia-icon {
+            transform: scale(1.2) rotate(5deg);
+        }
 
-/* Responsividade Mobile */
-@media (max-width: 768px) {
-    .tech-stack .tech-item {
-        min-width: 80px;
-        height: 80px;
-        padding: 1rem;
-    }
+        /* Pause animation on hover */
+        .tech-slider:hover .tech-track {
+            animation-play-state: paused;
+        }
 
-    .tech-stack .tech-item img {
-        width: 35px;
-        height: 35px;
-    }
+        .tech-slider:hover .tech-track-reverse {
+            animation-play-state: paused;
+        }
 
-    .tech-stack .tech-item span {
-        font-size: 0.7rem;
-    }
+        /* Responsividade Mobile */
+        @media (max-width: 768px) {
+            .tech-stack .tech-item {
+                min-width: 80px;
+                height: 80px;
+                padding: 1rem;
+            }
 
-    .postman-icon, .insomnia-icon {
-        font-size: 2rem;
-    }
-}
+            .tech-stack .tech-item img {
+                width: 35px;
+                height: 35px;
+            }
+
+            .tech-stack .tech-item span {
+                font-size: 0.7rem;
+            }
+
+            .postman-icon,
+            .insomnia-icon {
+                font-size: 2rem;
+            }
+        }
 
         .hero-text {
             text-align: left;
@@ -1263,16 +1268,16 @@
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Kauã Andrade</h1>
-                    <h2>Desenvolvedor FullStack | Estudante da UNICAMP de Limeira-SP</h2>
+                    <h2>Desenvolvedor Full Stack | Estudante da UNICAMP de Limeira-SP</h2>
                     <div class="paragraph-with-bar">
-                        <p>Olá, meu nome é Kauã, tenho 18 anos e sou um desenvolvedor apaixonado por tecnologia e
-                            inovação. Desde 2024, estou mergulhando no universo do desenvolvimento de software, com um
-                            foco especial em criar soluções web que atendem às necessidades e desejos dos usuários. Ao
-                            longo dessa jornada, tenho buscado constantemente aprimorar minhas habilidades e expandir
-                            meu conhecimento, com o objetivo de entregar experiências cada vez mais eficientes e
-                            impactantes. Acredito que a programação é uma ferramenta poderosa para transformar ideias em
-                            realidade, e estou sempre em busca de novos desafios para evoluir como profissional.</p>
+                        <p>Sou o Kauã, tenho 19 anos, estudante de Ciência da Computação na UNICAMP de Limeira-SP e
+                            apaixonado por programação.
+                            Atuo como desenvolvedor Full Stack, criando aplicações web e mobile com foco em eficiência e
+                            design moderno.
+                            Gosto de transformar ideias em projetos reais e estou sempre em busca de evoluir como
+                            profissional e como pessoa.</p>
                     </div>
+
 
                     <div class="stats-cards">
                         <div class="stat-card">
@@ -1286,11 +1291,12 @@
                     </div>
 
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/kau%C3%A3-henrique-da-silva-andrade-a4aa64347/" target="_blank"
-                            class="social-icon">
+                        <a href="https://www.linkedin.com/in/kau%C3%A3-henrique-da-silva-andrade-a4aa64347/"
+                            target="_blank" class="social-icon">
                             <i class="fab fa-linkedin"></i>
                         </a>
-                        <a href="https://www.instagram.com/kaua_henr_?igsh=MXJwcWhrc2N4eGtyMA%3D%3D&utm_source=qr " target="_blank" class="social-icon">
+                        <a href="https://www.instagram.com/kaua_henr_?igsh=MXJwcWhrc2N4eGtyMA%3D%3D&utm_source=qr "
+                            target="_blank" class="social-icon">
                             <i class="fab fa-instagram"></i>
                         </a>
                         <a href="https://github.com/kauahsa" target="_blank" class="social-icon">
@@ -1316,27 +1322,49 @@
                 </div>
                 <div class="about-text">
                     <h2>Olá, eu sou o Kauã</h2>
-                    <p>Desenvolvedor Full Stack apaixonado por criar sites elegantes e eficientes.Com uma carreira
-                        iniciada em 2024 com pouca experiencia, porem com muita vontade de evoluir e aprender sobre
-                        desenvolvimento de aplicações web e mobile, sempre busco aprender novas tecnologias e me manter
-                        atualizado com as tendências do mercado.</p>
-                    <p>Minha jornada na programação começou na universidade e desde então tenho trabalhado em diversos
-                        projetos proprios e para clientes de diferentes segmentos. Minha abordagem combina criatividade,
-                        boas práticas de desenvolvimento e foco na experiência do usuário.</p>
+                    <p>Sou o Kauã, apaixonado por programação, Desenvolvedor Full Stack e aluno da Unicamp em Limeira.
+                        Adoro criar soluções criativas, sites elegantes e aplicações eficientes. Minha jornada começou
+                        em 2024,
+                        ainda com pouca experiência, mas com muita vontade de evoluir e aprender cada vez mais sobre
+                        programação. Estou sempre em busca de novos conhecimentos e atento às
+                        tendências do mercado.</p>
+
+                    <p>Já participei de projetos próprios e também desenvolvi soluções para clientes de diferentes
+                        segmentos.
+                        Minha forma de trabalhar combina criatividade, boas práticas de programação e foco total na
+                        experiência do usuário.</p>
                     <div class="skills">
-                        <p><strong>Habilidades:</strong><br><br>
-                            <strong>Linguagens:</strong>
-                            <br> <br>
-                            <span class="skill-tag">JavaScript</span>
+                        <p><strong>Minhas Capacitações:</strong><br><br>
+
+                            <strong>Linguagens:</strong><br><br>
                             <span class="skill-tag">C</span>
                             <span class="skill-tag">C++</span>
-                            <span class="skill-tag">Python</span><br><br>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">Java</span>
+                            <span class="skill-tag">JavaScript</span><br><br>
+
+                            <strong>Backend:</strong><br><br>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">SQL Server</span><br><br>
+
                             <strong>Frontend:</strong><br><br>
                             <span class="skill-tag">HTML</span>
                             <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">React</span><br><br>
+
+                            <strong>Ferramentas e Versionamento:</strong><br><br>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Visual Studio 2022</span><br><br>
+
+                            <strong>APIs e Testes:</strong><br><br>
+                            <span class="skill-tag">Postman</span>
+                            <span class="skill-tag">Insomnia</span><br><br>
+
+                            <strong>Sistemas Operacionais:</strong><br><br>
+                            <span class="skill-tag">Linux</span>
                         </p>
-
-
                     </div>
                 </div>
             </div>
@@ -1403,123 +1431,151 @@
                             <span>C</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                                alt="C++">
                             <span>C++</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                alt="Python">
                             <span>Python</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                alt="Java">
                             <span>Java</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt="JavaScript">
                             <span>JavaScript</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                alt="Node.js">
                             <span>Node.js</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt="HTML5">
                             <span>HTML5</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt="CSS3">
                             <span>CSS3</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                alt="React">
                             <span>React</span>
                         </div>
                         <!-- Segunda linha de tecnologias (duplicada para efeito infinito) -->
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                alt="Git">
                             <span>Git</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub">
                             <span>GitHub</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                                alt="Linux">
                             <span>Linux</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                                alt="VS Code">
                             <span>VS Code</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg" alt="Visual Studio">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-plain.svg"
+                                alt="Visual Studio">
                             <span>Visual Studio</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                                alt="SQL Server">
                             <span>SQL Server</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/insomnia/insomnia-original.svg" alt="Insomnia">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/insomnia/insomnia-original.svg"
+                                alt="Insomnia">
                             <span>Insomnia</span>
                         </div>
                         <div class="tech-item">
-                            <img src=" https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">
-                           
+                            <img src=" https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
+                                alt="Postman">
+
                             <span>Postman</span>
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Segunda linha do slider (direção oposta) -->
                 <div class="tech-slider reverse">
                     <div class="tech-track-reverse" id="techTrackReverse">
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+                                alt="React">
                             <span>React</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
+                                alt="Node.js">
                             <span>Node.js</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                                alt="JavaScript">
                             <span>JavaScript</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                                alt="Python">
                             <span>Python</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg"
+                                alt="Git">
                             <span>Git</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
+                                alt="GitHub">
                             <span>GitHub</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+                                alt="VS Code">
                             <span>VS Code</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg"
+                                alt="Linux">
                             <span>Linux</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                                alt="HTML5">
                             <span>HTML5</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                                alt="CSS3">
                             <span>CSS3</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+                                alt="Java">
                             <span>Java</span>
                         </div>
                         <div class="tech-item">
-                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                                alt="SQL Server">
                             <span>SQL Server</span>
                         </div>
                     </div>
@@ -1532,9 +1588,10 @@
             <div class="projects">
                 <div class="project-grid">
                     <div class="project-card">
-                        <div class="project-img" style="background-image: url(image2.png); background-size: cover; background-position: center right;">
+                        <div class="project-img"
+                            style="background-image: url(image2.png); background-size: cover; background-position: center right;">
                             <!-- Imagem do projeto -->
-                           
+
                         </div>
                         <div class="project-info">
                             <h3>Site Minha Redes</h3>
@@ -1619,8 +1676,9 @@
                             <div class="button-group">
                                 <a target="_blank" href="https://recantoandrade.netlify.app/" class="btn">Ver
                                     projeto</a>
-                                <a target="_blank" href="https://github.com/kauahsa/Projeto-Recanto" class="btn-repositorio"><i
-                                        style="font-size: 20px;" class="fa-brands fa-github"> </i> Ver Repositorio</a>
+                                <a target="_blank" href="https://github.com/kauahsa/Projeto-Recanto"
+                                    class="btn-repositorio"><i style="font-size: 20px;" class="fa-brands fa-github">
+                                    </i> Ver Repositorio</a>
                             </div>
                         </div>
                     </div>
@@ -1829,136 +1887,136 @@
             window.addEventListener('scroll', setActiveLink);
         });
         // JavaScript para o Slider de Tecnologias
-document.addEventListener('DOMContentLoaded', function () {
-    
-    // Função para duplicar itens do slider e criar efeito infinito
-    function duplicateSliderItems() {
-        const techTrack = document.getElementById('techTrack');
-        const techTrackReverse = document.getElementById('techTrackReverse');
-        
-        // Duplicar itens do primeiro slider (esquerda para direita)
-        if (techTrack) {
-            const items = Array.from(techTrack.children);
-            items.forEach(item => {
-                const clone = item.cloneNode(true);
-                techTrack.appendChild(clone);
-            });
-        }
-        
-        // Duplicar itens do segundo slider (direita para esquerda)
-        if (techTrackReverse) {
-            const items = Array.from(techTrackReverse.children);
-            items.forEach(item => {
-                const clone = item.cloneNode(true);
-                techTrackReverse.appendChild(clone);
-            });
-        }
-    }
+        document.addEventListener('DOMContentLoaded', function () {
 
-    // Função para adicionar interatividade aos itens das tecnologias
-    function addTechItemsInteractivity() {
-        const techItems = document.querySelectorAll('.tech-item');
-        
-        techItems.forEach(item => {
-            // Efeito de hover adicional via JavaScript se necessário
-            item.addEventListener('mouseenter', function() {
-                // Pode adicionar efeitos extras aqui se necessário
-                this.style.zIndex = '10';
-            });
-            
-            item.addEventListener('mouseleave', function() {
-                this.style.zIndex = '1';
-            });
-            
-            // Click event para possíveis interações futuras
-            item.addEventListener('click', function() {
-                const techName = this.querySelector('span').textContent;
-                console.log(`Tecnologia selecionada: ${techName}`);
-                // Aqui você pode adicionar mais funcionalidades, como:
-                // - Mostrar mais detalhes da tecnologia
-                // - Filtrar projetos por tecnologia
-                // - Abrir modal com informações
-            });
-        });
-    }
+            // Função para duplicar itens do slider e criar efeito infinito
+            function duplicateSliderItems() {
+                const techTrack = document.getElementById('techTrack');
+                const techTrackReverse = document.getElementById('techTrackReverse');
 
-    // Função para ajustar velocidade baseada no tamanho da tela
-    function adjustAnimationSpeed() {
-        const isMobile = window.innerWidth <= 768;
-        const techTracks = document.querySelectorAll('.tech-track');
-        const techTracksReverse = document.querySelectorAll('.tech-track-reverse');
-        
-        if (isMobile) {
-            techTracks.forEach(track => {
-                track.style.animationDuration = '40s'; // Mais lento no mobile
-            });
-            techTracksReverse.forEach(track => {
-                track.style.animationDuration = '35s';
-            });
-        } else {
-            techTracks.forEach(track => {
-                track.style.animationDuration = '30s'; // Velocidade normal no desktop
-            });
-            techTracksReverse.forEach(track => {
-                track.style.animationDuration = '25s';
-            });
-        }
-    }
-
-    // Função para pausar animação quando elemento não está visível (otimização)
-    function handleVisibilityChange() {
-        const techSection = document.getElementById('languages');
-        const techTracks = document.querySelectorAll('.tech-track, .tech-track-reverse');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // Seção visível - continuar animações
-                    techTracks.forEach(track => {
-                        track.style.animationPlayState = 'running';
-                    });
-                } else {
-                    // Seção não visível - pausar animações para otimizar performance
-                    techTracks.forEach(track => {
-                        track.style.animationPlayState = 'paused';
+                // Duplicar itens do primeiro slider (esquerda para direita)
+                if (techTrack) {
+                    const items = Array.from(techTrack.children);
+                    items.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        techTrack.appendChild(clone);
                     });
                 }
+
+                // Duplicar itens do segundo slider (direita para esquerda)
+                if (techTrackReverse) {
+                    const items = Array.from(techTrackReverse.children);
+                    items.forEach(item => {
+                        const clone = item.cloneNode(true);
+                        techTrackReverse.appendChild(clone);
+                    });
+                }
+            }
+
+            // Função para adicionar interatividade aos itens das tecnologias
+            function addTechItemsInteractivity() {
+                const techItems = document.querySelectorAll('.tech-item');
+
+                techItems.forEach(item => {
+                    // Efeito de hover adicional via JavaScript se necessário
+                    item.addEventListener('mouseenter', function () {
+                        // Pode adicionar efeitos extras aqui se necessário
+                        this.style.zIndex = '10';
+                    });
+
+                    item.addEventListener('mouseleave', function () {
+                        this.style.zIndex = '1';
+                    });
+
+                    // Click event para possíveis interações futuras
+                    item.addEventListener('click', function () {
+                        const techName = this.querySelector('span').textContent;
+                        console.log(`Tecnologia selecionada: ${techName}`);
+                        // Aqui você pode adicionar mais funcionalidades, como:
+                        // - Mostrar mais detalhes da tecnologia
+                        // - Filtrar projetos por tecnologia
+                        // - Abrir modal com informações
+                    });
+                });
+            }
+
+            // Função para ajustar velocidade baseada no tamanho da tela
+            function adjustAnimationSpeed() {
+                const isMobile = window.innerWidth <= 768;
+                const techTracks = document.querySelectorAll('.tech-track');
+                const techTracksReverse = document.querySelectorAll('.tech-track-reverse');
+
+                if (isMobile) {
+                    techTracks.forEach(track => {
+                        track.style.animationDuration = '40s'; // Mais lento no mobile
+                    });
+                    techTracksReverse.forEach(track => {
+                        track.style.animationDuration = '35s';
+                    });
+                } else {
+                    techTracks.forEach(track => {
+                        track.style.animationDuration = '30s'; // Velocidade normal no desktop
+                    });
+                    techTracksReverse.forEach(track => {
+                        track.style.animationDuration = '25s';
+                    });
+                }
+            }
+
+            // Função para pausar animação quando elemento não está visível (otimização)
+            function handleVisibilityChange() {
+                const techSection = document.getElementById('languages');
+                const techTracks = document.querySelectorAll('.tech-track, .tech-track-reverse');
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Seção visível - continuar animações
+                            techTracks.forEach(track => {
+                                track.style.animationPlayState = 'running';
+                            });
+                        } else {
+                            // Seção não visível - pausar animações para otimizar performance
+                            techTracks.forEach(track => {
+                                track.style.animationPlayState = 'paused';
+                            });
+                        }
+                    });
+                }, {
+                    threshold: 0.1 // Ativar quando 10% da seção estiver visível
+                });
+
+                if (techSection) {
+                    observer.observe(techSection);
+                }
+            }
+
+            // Inicializar todas as funcionalidades
+            function initTechStack() {
+                duplicateSliderItems();
+                addTechItemsInteractivity();
+                adjustAnimationSpeed();
+                handleVisibilityChange();
+            }
+
+            // Executar inicialização
+            initTechStack();
+
+            // Reajustar em redimensionamento da janela
+            window.addEventListener('resize', function () {
+                adjustAnimationSpeed();
             });
-        }, {
-            threshold: 0.1 // Ativar quando 10% da seção estiver visível
-        });
-        
-        if (techSection) {
-            observer.observe(techSection);
-        }
-    }
 
-    // Inicializar todas as funcionalidades
-    function initTechStack() {
-        duplicateSliderItems();
-        addTechItemsInteractivity();
-        adjustAnimationSpeed();
-        handleVisibilityChange();
-    }
+            // Opcional: Adicionar controles de pausa/play
+            function addPlayPauseControls() {
+                const techStack = document.querySelector('.tech-stack');
+                if (!techStack) return;
 
-    // Executar inicialização
-    initTechStack();
-
-    // Reajustar em redimensionamento da janela
-    window.addEventListener('resize', function() {
-        adjustAnimationSpeed();
-    });
-
-    // Opcional: Adicionar controles de pausa/play
-    function addPlayPauseControls() {
-        const techStack = document.querySelector('.tech-stack');
-        if (!techStack) return;
-
-        // Criar botão de controle (opcional)
-        const controlButton = document.createElement('button');
-        controlButton.innerHTML = '⏸️ Pausar';
-        controlButton.className = 'tech-control-btn';
-        controlButton.style.cssText = `
+                // Criar botão de controle (opcional)
+                const controlButton = document.createElement('button');
+                controlButton.innerHTML = '⏸️ Pausar';
+                controlButton.className = 'tech-control-btn';
+                controlButton.style.cssText = `
             position: absolute;
             top: 10px;
             right: 10px;
@@ -1972,33 +2030,33 @@ document.addEventListener('DOMContentLoaded', function () {
             z-index: 100;
         `;
 
-        let isPaused = false;
-        controlButton.addEventListener('click', function() {
-            const tracks = document.querySelectorAll('.tech-track, .tech-track-reverse');
-            
-            if (isPaused) {
-                tracks.forEach(track => {
-                    track.style.animationPlayState = 'running';
+                let isPaused = false;
+                controlButton.addEventListener('click', function () {
+                    const tracks = document.querySelectorAll('.tech-track, .tech-track-reverse');
+
+                    if (isPaused) {
+                        tracks.forEach(track => {
+                            track.style.animationPlayState = 'running';
+                        });
+                        this.innerHTML = '⏸️ Pausar';
+                        isPaused = false;
+                    } else {
+                        tracks.forEach(track => {
+                            track.style.animationPlayState = 'paused';
+                        });
+                        this.innerHTML = '▶️ Continuar';
+                        isPaused = true;
+                    }
                 });
-                this.innerHTML = '⏸️ Pausar';
-                isPaused = false;
-            } else {
-                tracks.forEach(track => {
-                    track.style.animationPlayState = 'paused';
-                });
-                this.innerHTML = '▶️ Continuar';
-                isPaused = true;
+
+                // techStack.style.position = 'relative';
+                // techStack.appendChild(controlButton);
+
+                // Descomente as linhas acima se quiser adicionar o botão de controle
             }
+
+            // addPlayPauseControls(); // Descomente para ativar controles
         });
-
-        // techStack.style.position = 'relative';
-        // techStack.appendChild(controlButton);
-        
-        // Descomente as linhas acima se quiser adicionar o botão de controle
-    }
-
-    // addPlayPauseControls(); // Descomente para ativar controles
-});
     </script>
 </body>
 
